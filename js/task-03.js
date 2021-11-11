@@ -24,15 +24,36 @@ const images = [
 // Все элементы галереи должны добавляться в DOM за одну операцию вставки.
 // Добавь минимальное оформление галереи флексбоксами или гридами через CSS классы.
 
+// const galleryRef = document.querySelector('.gallery');
+
+
+// console.log(galeryRef);
+
+const buildGallery = images => {
+  const {
+    url,
+    alt,
+   } = images;
+  return `<li><img src='${url}' alt='${alt}' width = '300' height = '200'/></li>`;
+  
+};
+
 const galleryRef = document.querySelector('.gallery');
 galleryRef.style.display = 'flex';
 galleryRef.style.listStyle = 'none';
 
-// console.log(galeryRef);
+const makeImg = images
+  .map(buildGallery)
+  .join('');
 
-images.forEach(image => {
-  galleryRef.insertAdjacentHTML('afterbegin', `<li><img src='${image.url}' alt='${image.alt}' width = '300' height = '200'/></li>`);
-});
+galleryRef.insertAdjacentHTML("beforeend", makeImg);
+  
+// console.log(galleryRef);
+
+
+// images.forEach(image => {
+//   galleryRef.insertAdjacentHTML('afterbegin', `<li><img src='${image.url}' alt='${image.alt}' width = '300' height = '200'/></li>`);
+// });
 
 
 

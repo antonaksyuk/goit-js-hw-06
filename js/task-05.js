@@ -12,6 +12,13 @@ const nameOutputRef = document.querySelector('#name-output');
 // console.log(nameInputRef, nameOutputRef);
 
 nameInputRef.addEventListener("input", (event) => {
-    nameOutputRef.textContent = event.currentTarget.value;
+    if (!event.currentTarget.value) {
+        nameOutputRef.textContent = 'Anonymous';
+}
+    else {
+        nameOutputRef.textContent = event.currentTarget.value;
+    // console.log(nameOutputRef);
+    }
+
 });
 

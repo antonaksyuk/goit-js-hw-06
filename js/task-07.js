@@ -7,9 +7,11 @@
 // <span id="text">Abracadabra!</span>
 
 const inputRef = document.querySelector('#font-size-control');
+inputRef.setAttribute('value', 16)
 const textRef = document.querySelector("#text");
 
 let textChange = 0;
+
 inputRef.addEventListener('input', (event) => {
     textChange = event.currentTarget.value
     textRef.style.fontSize = textChange.toString() + 'px'

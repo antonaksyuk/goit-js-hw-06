@@ -29,7 +29,7 @@ function handleSubmit(event) {
     } = event.currentTarget;
 
     if (email.value === '' || password.value === '') {
-        alert("Все поля должны быть заполнены")
+        return alert("Все поля должны быть заполнены")
     }
 
     const inputForm = {
